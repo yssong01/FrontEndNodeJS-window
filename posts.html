@@ -3,13 +3,13 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>포스트 목록</title>
+    <title>글쓰기 목록</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body class="page-body">
     <header class="page-header">
-      <h1>포스트 목록</h1>
-      <nav>
+      <h1>글쓰기 목록</h1>
+      <nav class="page-actions">
         <a href="./post_new.html">글쓰기</a>
         <a href="./login.html">로그아웃</a>
       </nav>
@@ -17,9 +17,9 @@
 
     <!-- 특정 아이디(userid)로 검색 -->
     <section class="search-section">
-      <input type="text" id="searchUserid" placeholder="userid로 검색" />
+      <input type="text" id="useridSearch" placeholder="userid로 검색" />
       <button id="searchBtn">검색</button>
-      <button id="resetBtn">전체 보기</button>
+      <button id="allBtn">전체 보기</button>
     </section>
 
     <section>
