@@ -6,7 +6,8 @@ const API_BASE =
   window.location.hostname === "localhost" ||
   window.location.hostname === "127.0.0.1"
     ? "http://localhost:8000"
-    : "https://yssong-node-api.onrender.com";
+    : // : "https://yssong-node-api.onrender.com";
+      "https://frontendnodejs-window.onrender.com";
 
 // ────────────── 토큰 헬퍼 ──────────────
 export function saveToken(token) {
