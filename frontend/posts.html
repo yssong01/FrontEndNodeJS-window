@@ -1,0 +1,44 @@
+<!-- frontend/posts.html -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>포스트 목록</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="page-body">
+    <header class="page-header">
+      <h1>포스트 목록</h1>
+      <nav>
+        <a href="./post_new.html">글쓰기</a>
+        <a href="./login.html">로그아웃</a>
+      </nav>
+    </header>
+
+    <!-- 특정 아이디(userid)로 검색 -->
+    <section class="search-section">
+      <input type="text" id="searchUserid" placeholder="userid로 검색" />
+      <button id="searchBtn">검색</button>
+      <button id="resetBtn">전체 보기</button>
+    </section>
+
+    <section>
+      <table class="post-table">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>작성자</th>
+            <th>내용</th>
+            <th>작성일</th>
+          </tr>
+        </thead>
+        <tbody id="postList"></tbody>
+      </table>
+    </section>
+
+    <p id="listMessage" class="auth-message"></p>
+
+    <!-- 공통 API + 목록 전용 JS -->
+    <script type="module" src="./js/posts_page.js"></script>
+  </body>
+</html>

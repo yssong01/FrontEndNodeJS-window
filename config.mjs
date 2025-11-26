@@ -1,0 +1,28 @@
+// config.mjs
+import dotenv from "dotenv";
+dotenv.config();
+
+function required(key, defaultValue = undefined) {
+  const value = process.env[key] || defaultValue;
+  if (value == null) {
+    // [FIX] 백틱(`) 사용해서 템플릿 문자열로 변경
+    throw new Error(`키 ${key}는 undefined!!`);
+  }
+  return value;
+}
+
+export const config = {
+  jwt: {
+    secretKey: required("JWT_SECRET"),
+    expiresInSec: parseInt(required("JWT_EXPIRES_SEC")),
+  },
+  bcrypt: {
+    saltRounds: parseInt(required("BCRYPT_SALT_ROUNDS", 12)),
+  },
+  host: {
+    port: parseInt(required("HOST_PORT", 9090)),
+  },
+  db: {
+    host: required("DB_HOST"),
+  },
+};

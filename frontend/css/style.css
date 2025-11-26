@@ -1,0 +1,248 @@
+/* 기본 */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* 로그인/회원가입 공통 */
+.auth-body {
+  background-color: #f5f6f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.auth-card {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 360px;
+}
+
+.auth-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #03c75a; /* 네이버 녹색 느낌 */
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.auth-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* .auth-tab {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0 0 1rem;
+  border-bottom: 1px solid #e4e4e4;
+} */
+
+/* "ID/비밀번호" 한 줄 제목 */
+.auth-tab-single {
+  margin: 0 0 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #e4e4e4;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #222;
+  text-align: left;
+}
+
+.auth-tab li {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.auth-tab li.active {
+  color: #222;
+  font-weight: bold;
+  border-bottom: 2px solid #03c75a;
+}
+
+.auth-form label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.6rem;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #dadada;
+}
+
+/* 로그인 상태 유지: 체크박스와 글자를 한 줄에 세우고 가운데 정렬 */
+.auth-keep {
+  display: flex;
+  align-items: center; /* 세로 가운데 정렬 */
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+  gap: 0.35rem; /* 체크박스와 글자 간격 */
+}
+
+/* 이 라벨 안의 input은 전체 폭을 차지하지 않도록 */
+.auth-keep input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #03c75a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-button:hover {
+  opacity: 0.9;
+}
+
+.auth-link {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.auth-message {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #e74c3c;
+  text-align: center;
+}
+
+/* 목록/편집 페이지 공통 */
+.page-body {
+  background-color: #fff;
+}
+
+.page-header {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-header nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #03c75a;
+}
+
+.search-section {
+  padding: 1rem 2rem;
+}
+
+.post-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.post-table th,
+.post-table td {
+  border-bottom: 1px solid #eee;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+}
+
+.post-table a {
+  color: #333;
+  text-decoration: none;
+}
+
+.editor-main {
+  padding: 1rem 2rem;
+}
+
+.editor-form textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 0.8rem;
+  box-sizing: border-box;
+}
+
+.editor-buttons {
+  margin-top: 0.8rem;
+}
+
+.editor-buttons button {
+  margin-right: 0.5rem;
+}
+
+.danger-button {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #e74c3c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.detail-box {
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.detail-meta {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* ───────── 폼 하단 버튼 공통 스타일 ───────── */
+
+/* 기본 버튼 공통 모양 (덮어쓰기용) */
+.auth-button,
+.danger-button {
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* 초록색: 등록/수정 */
+.auth-button {
+  background-color: #00c853;
+  color: #ffffff;
+}
+
+/* 빨간색: 취소/삭제 */
+.danger-button {
+  background-color: #e53935;
+  color: #ffffff;
+}
+
+/* 버튼을 가로로 나란히 배치 */
+.editor-buttons {
+  margin-top: 1rem;
+}
+
+.editor-buttons--row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* 한 줄에서 같은 크기로 */
+.editor-buttons--row .auth-button,
+.editor-buttons--row .danger-button {
+  flex: 1;
+  display: block;
+  text-align: center;
+}
+

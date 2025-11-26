@@ -1,0 +1,44 @@
+<!-- frontend/post_edit.html -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>포스트 수정</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="page-body">
+    <header class="page-header">
+      <h1>포스트 수정</h1>
+      <nav>
+        <a href="./posts.html">목록</a>
+      </nav>
+    </header>
+
+    <main class="editor-main">
+      <form id="editPostForm" class="editor-form">
+        <!-- 마찬가지로 제목은 옵션이고 서버에는 저장 안 하므로 disabled -->
+        <input
+          type="text"
+          placeholder="제목(옵션) - 여기서는 text에만 저장"
+          disabled
+        />
+        <textarea
+          name="text"
+          rows="10"
+          placeholder="내용을 수정하세요."
+          required
+        ></textarea>
+        <div class="editor-buttons editor-buttons--row">
+          <button type="submit" class="auth-button">수정</button>
+          <button type="button" class="danger-button" onclick="history.back()">
+            취소
+          </button>
+        </div>
+      </form>
+      <p id="editMessage" class="auth-message"></p>
+    </main>
+
+    <!-- 수정 전용 JS -->
+    <script type="module" src="./js/post_edit_page.js"></script>
+  </body>
+</html>
