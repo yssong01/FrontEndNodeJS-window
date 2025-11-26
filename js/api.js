@@ -1,6 +1,12 @@
-// frontend/js/api.js
+// js/api.js
 
-const API_BASE = "http://localhost:8000";
+// 로컬에서 열었을 때는 localhost:8000,
+// GitHub Pages(또는 다른 도메인)에서는 Render API 사용
+const API_BASE =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1"
+    ? "http://localhost:8000"
+    : "https://yssong-node-api.onrender.com";
 
 // ────────────── 토큰 헬퍼 ──────────────
 export function saveToken(token) {
@@ -109,7 +115,6 @@ export async function deletePost(id) {
 }
 
 // ────────────── 댓글 API (확장용) ──────────────
-// 백엔드에 /post/:id/comments가 있다고 가정
 export async function getComments(postId) {
   return fetchJSON(`/post/${postId}/comments`, { method: "GET" });
 }

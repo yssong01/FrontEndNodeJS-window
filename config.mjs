@@ -14,13 +14,18 @@ function required(key, defaultValue = undefined) {
 export const config = {
   jwt: {
     secretKey: required("JWT_SECRET"),
-    expiresInSec: parseInt(required("JWT_EXPIRES_SEC")),
+    expiresInSec: parseInt(required("JWT_EXPIRES_SEC"), 10),
   },
   bcrypt: {
-    saltRounds: parseInt(required("BCRYPT_SALT_ROUNDS", 12)),
+    saltRounds: parseInt(required("BCRYPT_SALT_ROUNDS", 12), 10),
   },
   host: {
-    port: parseInt(required("HOST_PORT", 9090)),
+    // ✅ Render 환경: PORT 우선 사용
+    //    로컬/기타 환경: HOST_PORT → 없으면 9090 사용
+    port: parseInt(
+      process.env.PORT || process.env.HOST_PORT || "9090",
+      10
+    ),
   },
   db: {
     host: required("DB_HOST"),
