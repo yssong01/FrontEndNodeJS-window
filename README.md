@@ -1,6 +1,6 @@
-# 🚀 FrontEnd + Node.js + JWT + MongoDB Fullstack Web Service
+# 🚀 Fullstack Web Service ver1-1.
 
-실제 서비스처럼 작동하는 완전한 풀스택 웹 애플리케이션입니다.
+FrontEnd + Node.js + JWT + MongoDB를 조합하여 실제 서비스처럼 작동하는 테스트용 연습버전의 풀스택 웹 애플리케이션입니다.
 
 HTML/CSS/JS + Node.js API + JWT 인증 + MongoDB + Render + GitHub Pages를 활용하여 (임시로) 배포까지 완료했습니다.
 
@@ -383,6 +383,7 @@ project-root/
 - 📝 Tistory: [https://memo1286.tistory.com/](https://memo1286.tistory.com/)
 
 ---
+
 
 
 
