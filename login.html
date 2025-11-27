@@ -107,7 +107,7 @@
 
         try {
           const data = await login({ userid, password });
-          saveToken(data.token);
+          //saveToken(data.token); // ← 이 줄은 사실 없어도 됩니다.
           msgEl.textContent = "로그인 성공!";
 
           setTimeout(() => {

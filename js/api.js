@@ -1,13 +1,16 @@
 // js/api.js
 
-// 로컬에서 열었을 때는 localhost:8000,
-// GitHub Pages(또는 다른 도메인)에서는 Render API 사용
-const API_BASE =
-  window.location.hostname === "localhost" ||
-  window.location.hostname === "127.0.0.1"
-    ? "http://localhost:8000"
-    : // : "https://yssong-node-api.onrender.com";
-      "https://frontendnodejs-window.onrender.com";
+// // 로컬에서 열었을 때는 localhost:8000,
+// // GitHub Pages(또는 다른 도메인)에서는 Render API 사용
+// const API_BASE =
+//   window.location.hostname === "localhost" ||
+//   window.location.hostname === "127.0.0.1"
+//     ? "http://localhost:8000"
+//     : // : "https://yssong-node-api.onrender.com";
+//       "https://frontendnodejs-window.onrender.com";
+
+// 이렇게 단일 주소로 고정
+const API_BASE = "https://frontendnodejs-window.onrender.com";
 
 // ────────────── 토큰 헬퍼 ──────────────
 export function saveToken(token) {

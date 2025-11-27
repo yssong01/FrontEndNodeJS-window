@@ -1,28 +1,28 @@
 // frontend/js/posts_page.js
-import { apiRequest } from "./api.js";
+import { getPosts } from "./api.js";
 
 const tbody = document.getElementById("postList");
 const msgEl = document.getElementById("listMessage");
-const searchUserid = document.getElementById("searchUserid");
-const searchBtn = document.getElementById("searchBtn");
-const resetBtn = document.getElementById("resetBtn");
+
+const useridInput = document.getElementById("useridSearch"); // ✅ HTML과 일치
+const searchBtn = document.getElementById("searchBtn"); // ✅
+const allBtn = document.getElementById("allBtn"); // ✅
 
 // 게시글 목록 불러오기 (옵션: userid 검색)
 async function loadPosts(userid = "") {
   msgEl.textContent = "";
   tbody.innerHTML = "";
 
-  const query = userid ? `?userid=${encodeURIComponent(userid)}` : "";
-
   try {
-    const posts = await apiRequest(`/post${query}`);
-    if (!posts.length) {
+    const posts = await getPosts(userid); // GET /post 또는 /post?userid=...
+
+    if (!posts || !posts.length) {
       msgEl.textContent = "포스트가 없습니다.";
       return;
     }
 
     posts.forEach((p, idx) => {
-      // 백엔드에서 id 또는 _id 둘 중 하나만 내려와도 동작하도록 방어 코드
+      // id / _id 둘 다 방어 코드
       const postId = p.id || p._id;
 
       const tr = document.createElement("tr");
@@ -45,12 +45,15 @@ async function loadPosts(userid = "") {
   }
 }
 
+// 검색 버튼
 searchBtn.addEventListener("click", () => {
-  loadPosts(searchUserid.value.trim());
+  const userid = useridInput.value.trim();
+  loadPosts(userid);
 });
 
-resetBtn.addEventListener("click", () => {
-  searchUserid.value = "";
+// 전체 보기 버튼
+allBtn.addEventListener("click", () => {
+  useridInput.value = "";
   loadPosts();
 });
 
