@@ -1,8 +1,16 @@
-# 🚀 Fullstack Web Service ver1-1.
+# 🚀 FrontEnd Fullstack Web Service ver1.1
 
-FrontEnd + Node.js + JWT + MongoDB를 조합하여 실제 서비스처럼 작동하는 테스트용 연습버전의 풀스택 웹 애플리케이션입니다.
+학습 및 연습용으로 시도한 실제 서비스형 풀스택 웹 애플리케이션입니다.
 
-HTML/CSS/JS + Node.js API + JWT 인증 + MongoDB + Render + GitHub Pages를 활용하여 (임시로) 배포까지 완료했습니다.
+아래 사항들을 활용하여 회원가입 → 로그인 → 글쓰기/수정/삭제 → 특정 id로 글 검색까지 가능한 구조를 구현했습니다.
+- HTML/CSS/JavaScript 기반의 프론트엔드
+- Node.js 기반 REST API 서버
+- JWT 인증 시스템
+- MongoDB Atlas
+- Render(백엔드 배포)
+- GitHub Pages(프론트 배포)
+
+현재 ver1.1은 테스트용 임시 배포 버전으로, 실제 서비스의 구조에 최대한 부합하도록 하여 학습 및 프로젝트 포트폴리오용으로 활용할 수 있습니다.
 
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Express](https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white)](https://expressjs.com/)
@@ -383,6 +391,7 @@ project-root/
 - 📝 Tistory: [https://memo1286.tistory.com/](https://memo1286.tistory.com/)
 
 ---
+
 
 
 
